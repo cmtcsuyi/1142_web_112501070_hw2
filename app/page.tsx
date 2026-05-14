@@ -7,6 +7,7 @@ import { Button } from '@heroui/react';
 import { ColorSlider, Label } from '@heroui/react';
 import {parseColor} from "react-aria-components";
 import ActionButton from "@/component/ActionButton";
+import Emoticons from "@/component/Emoticons";
 
 export default function Home() {
 
@@ -16,16 +17,21 @@ export default function Home() {
     <>
       <div className="flex flex-col justify-center items-center gap-4">
         歡迎
+        <Emoticons faceIndex={0}>
+          123
+        </Emoticons>
+        
         <Button>
-      My Button
-    </Button>
-    <ColorSlider channel="hue" className="w-full max-w-xs" defaultValue="hsl(0, 100%, 50%)">
-      <Label>Hue</Label>
-      <ColorSlider.Output />
-      <ColorSlider.Track>
-        <ColorSlider.Thumb />
-      </ColorSlider.Track>
-    </ColorSlider>
+          My Button
+        </Button>
+        <ColorSlider channel="hue" className="w-full max-w-xs" defaultValue="hsl(0, 100%, 50%)">
+          <Label>Hue</Label>
+          <ColorSlider.Output />
+          <ColorSlider.Track>
+            <ColorSlider.Thumb />
+          </ColorSlider.Track>
+        </ColorSlider>
+
         <Link className="text-white bg-black px-3 py-2" href="/question">START</Link>
 
         <ActionButton/>

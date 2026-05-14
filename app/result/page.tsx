@@ -18,11 +18,11 @@ export default function Result() {
   }, [psyData.score]);
 
   function getResult(){
-    if(psyData.score < 3){
+    if(psyData.score <= 3){
       setPsyResult(<div>result A</div>);
-    }else if(psyData.score >= 3 && psyData < 7){
+    }else if(psyData.score > 3 && psyData.score <= 6){
       setPsyResult(<div>result B</div>);
-    } else {
+    } else if(psyData.score > 6){
       setPsyResult(<div>result C</div>);
     }
   }
