@@ -1,41 +1,35 @@
-"use client"
-
-import Image from "next/image";
-import Link from "next/link";
-import { useState, useEffect } from "react";
-import { Button } from '@heroui/react';
-import { ColorSlider, Label } from '@heroui/react';
-import {parseColor} from "react-aria-components";
-import ActionButton from "@/component/ActionButton";
-import Emoticons from "@/component/Emoticons";
-
 export default function Home() {
-
-  const [color, setColor] = useState(parseColor("hsl(200, 100%, 50%)"));
-
   return (
     <>
-      <div className="flex flex-col justify-center items-center gap-4">
-        歡迎
-        <Emoticons faceIndex={0}>
-          123
-        </Emoticons>
-        
-        <Button>
-          My Button
-        </Button>
-        <ColorSlider channel="hue" className="w-full max-w-xs" defaultValue="hsl(0, 100%, 50%)">
-          <Label>Hue</Label>
-          <ColorSlider.Output />
-          <ColorSlider.Track>
-            <ColorSlider.Thumb />
-          </ColorSlider.Track>
-        </ColorSlider>
+      <h1 className="text-[32px] leading-[1.4] text-[#2f3a36] font-medium mb-10">
+        你的內在，<br />
+        屬於哪一種雲？
+      </h1>
 
-        <Link className="text-white bg-black px-3 py-2" href="/question">START</Link>
+      <p className="text-[16px] leading-8 text-[#3f4a46] mb-8">
+        天空從來不是單一狀態。<br />
+        有時輕盈，有時堆積，有時低沉，<br />
+        有時劇烈翻湧。<br />
+        你也是。
+      </p>
 
-        <ActionButton/>
+      <p className="text-[16px] leading-8 text-[#3f4a46] mb-8">
+        在不同的情境之中，<br />
+        你如何移動、改變或停留，<br />
+        其實早已形成一種屬於你的節奏。
+      </p>
 
+      <p className="text-[16px] leading-8 text-[#3f4a46] mb-8">
+        這個測驗，將描繪你的內在形態。
+      </p>
+
+      <div className="flex justify-center">
+        <a
+          href="/question"
+          className="bg-[#2f3a36] text-white px-8 py-3 rounded-xl text-[14px] tracking-widest hover:scale-105 transition"
+        >
+          開始測驗
+        </a>
       </div>
     </>
   );

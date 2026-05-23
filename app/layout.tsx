@@ -27,9 +27,14 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="h-full flex justify-center w-full bg-amber-100 pt-4 pb-4">
+      <body className="h-full flex justify-center w-full bg-[#f0e8dc] pt-4 pb-4 px-4 sm:px-0 relative overflow-hidden">
 
-        <div className="bg-white max-w-[480px] w-full h-full mx-auto rounded-3xl p-4">
+        {/* 雲背景 */}
+        <img src="/CloudBG.png" className="absolute bottom-0 w-full object-contain opacity-95 blur-[4.5px] pointer-events-none"/>
+        <div className="absolute bottom-0 w-full h-[40%] bg-gradient-to-t from-[#f0e8dc]/80 to-transparent pointer-events-none" />
+
+        {/* 卡片 */}
+        <div className="relative z-10 bg-white/50 backdrop-blur-lg max-w-[480px] w-full min-h-[60vh] my-auto mx-auto rounded-3xl p-6 shadow-[0_15px_60px_rgba(120,150,255,0.25)]">
           {children}
         </div>
         

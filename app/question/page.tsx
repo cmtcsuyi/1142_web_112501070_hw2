@@ -37,22 +37,47 @@ export default function Question() {
   return (
     <>
       <div className="flex flex-col justify-center items-center gap-4">
-        答題
+        答題階段
 
         <div>
-          <div>{("Q"+ (questionIndex+1) + ".") + psyData.quizData[questionIndex].title }</div>
-          {/* <div onClick={ ()=>nextQuestion(0) }>{ psyData.quizData[questionIndex].options[0].text }</div>
-          <div onClick={ ()=>nextQuestion(1) }>{ psyData.quizData[questionIndex].options[1].text }</div>
-          <div onClick={ ()=>nextQuestion(2) }>{ psyData.quizData[questionIndex].options[2].text }</div> */}
+          <div className="mt-10 mb-10">{("Q"+ (questionIndex+1) + ". ") + psyData.quizData[questionIndex].title }</div>
 
           {
             psyData.quizData[questionIndex].options.map( (option: any, index: number) => {
-              return <div onClick={ ()=>nextQuestion(index) }>{ option.text }</div>
+              // return <div onClick={ ()=>nextQuestion(index) }>{ option.text }</div>
+              return (
+                <div
+                  key={index}
+                  onClick={() => nextQuestion(index)}
+                  className="
+                    w-full
+                    max-w-md
+                    px-5 py-4
+                    mb-10
+                    rounded-xl
+                    bg-[#f0e8dc]/50
+                    backdrop-blur-md
+                    border border-white/40
+                    text-[#2f3a36]
+                    shadow-[0_6px_20px_rgba(0,0,0,0.08)]
+                    cursor-pointer
+                    transition-all duration-300
+                    hover:scale-[1.02]
+                    hover:bg-white/80
+                    hover:shadow-[0_10px_30px_rgba(120,120,255,0.25)]
+                    active:scale-[0.98]
+                  "
+                >
+                  <div className="flex flex-col items-center w-full"> {option.text} </div>
+                </div>
+              );
             })
           }
-        </div>
+          <div className="flex justify-center items-center text-sm text-gray-500 mt-15">
+            Q{questionIndex + 1} / {psyData.quizData.length}
+          </div>
 
-        {/* <Link className="text-white bg-black px-3 py-2" href="/prepare">準備</Link> */}
+        </div>
       </div>
     </>
   );
