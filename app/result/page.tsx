@@ -18,7 +18,7 @@ type FullResultType = ResultType & {
 
 const RESULT_MAP: (ResultType & { max: number, img: string})[] = [
   {
-    max: 5,
+    max: 6,
     type: "cirrus",
     title: "卷雲（Cirrus）",
     desc: "你像高空的卷雲，輕盈而清晰。\n你傾向先理解再行動，在變化中保持距離與洞察。",
@@ -26,7 +26,7 @@ const RESULT_MAP: (ResultType & { max: number, img: string})[] = [
     img: "/cirrus.jpg",
   },
   {
-    max: 7,
+    max: 8,
     type: "cumulus",
     title: "積雲（Cumulus）",
     desc: "你在變動中成形。\n你不需要固定方向，因為你會在流動中找到答案。",
@@ -34,7 +34,7 @@ const RESULT_MAP: (ResultType & { max: number, img: string})[] = [
     img: "/cumulus.avif",
   },
   {
-    max: 9,
+    max: 11,
     type: "cumulonimbus",
     title: "積雨雲（Cumulonimbus）",
     desc: "你蘊含能量，並在某些時刻轉化為改變。\n你不總是顯現，但當條件成熟，你會帶來轉折。",
@@ -42,12 +42,20 @@ const RESULT_MAP: (ResultType & { max: number, img: string})[] = [
     img: "/Cumulonimbus.webp",
   },
   {
-    max: 12,
+    max: 13,
     type: "stratus",
     title: "層雲（Stratus）",
     desc: "你維持整體的穩定與連續。\n你不追逐劇烈變化，而是讓一切在適當的節奏中存在。",
     quote: "✨ You hold the sky together.",
     img: "/Stratus.jpg",
+  },
+  {
+    max: 15,
+    type: "convective",
+    title: "對流雲（Convective Cloud）",
+    desc: "你是讓天空重新排列的氣流。\n在長時間的穩定與內在累積之後，\n你會進入臨界轉換的狀態。",
+    quote: "✨ You don’t break the sky — you reorganize it.",
+    img: "/Convective.jpg",
   },
 ];
 
@@ -87,7 +95,7 @@ export default function Result() {
         {result.title}
       </h1>
       
-      <img src={result.img} alt={result.type} className="w-40 h-auto mb-2 object-contain"/>
+      <img src={result.img} alt={result.type} className="w-40 h-auto mb-2 object-contain rounded-2xl"/>
   
       {/* 分隔線 */}
       <div className="w-10 h-[2px] bg-gradient-to-r from-[#9bbcff] to-[#8b8cf5] rounded-full" />
@@ -105,18 +113,7 @@ export default function Result() {
       {/* 按鈕 */}
       <button
         onClick={playAgain}
-        className="
-          mt-8
-          bg-[#2f3a36]
-          text-white
-          px-8 py-3
-          rounded-xl
-          text-[14px]
-          tracking-widest
-          transition-all duration-300
-          hover:-translate-y-1
-          active:translate-y-0 active:scale-95
-        "
+        className="bg-[#2f3a36] text-white px-8 py-3 rounded-xl text-[14px] tracking-widest hover:scale-105 transition"
       >
         再來一次
       </button>

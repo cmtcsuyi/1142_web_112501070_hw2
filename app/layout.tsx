@@ -31,19 +31,6 @@ export default function RootLayout({
       <body suppressHydrationWarning className="h-full flex justify-center w-full bg-[#f0e8dc] pt-4 pb-4 px-4 sm:px-0 relative overflow-hidden">
 
         {/* 雲背景 */}
-        {/* <div className="fixed inset-0 -z-10 pointer-events-none">
-          <Image
-            src="/CloudBG.png"
-            alt="cloud"
-            fill
-            priority
-            className="object-cover object-bottom opacity-95 blur-[4.5px]"
-          />
-
-          
-          <div className="absolute bottom-0 w-full h-[40%] bg-gradient-to-t from-[#f0e8dc]/80 to-transparent" />
-        </div> */}
-
         <img src="/CloudBG.png" className="absolute bottom-0 w-full object-contain opacity-95 blur-[4.5px] pointer-events-none"/>
         <div className="absolute bottom-0 w-full h-[40%] bg-gradient-to-t from-[#f0e8dc]/80 to-transparent pointer-events-none" />
 
