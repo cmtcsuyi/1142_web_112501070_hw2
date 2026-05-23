@@ -59,6 +59,8 @@ export default function Result() {
   const [result, setResult] = useState<FullResultType | null>(null);
 
   useEffect(() => {
+    if (psyData.score === 0) return;
+
     const found =
       RESULT_MAP.find((item) => psyData.score <= item.max) ||
       RESULT_MAP[RESULT_MAP.length - 1];
@@ -67,13 +69,11 @@ export default function Result() {
   }, [psyData.score]);
 
   function playAgain() {
-    router.replace("/"); // 先跳頁
-    setTimeout(() => {
-      setPsyScore(0);   // 再清 state
-    }, 0);
+    setPsyScore(0);
+    router.replace("/");
   }
 
-  if (!result) return null;
+  if (!result || psyData.score === 0) return null;
   return (
     <div className="flex flex-col items-center justify-center text-center gap-6 min-h-[60vh] px-4">
   
