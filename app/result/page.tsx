@@ -67,8 +67,10 @@ export default function Result() {
   }, [psyData.score]);
 
   function playAgain() {
-    setPsyScore(0);
-    router.push("/");
+    router.replace("/"); // 先跳頁
+    setTimeout(() => {
+      setPsyScore(0);   // 再清 state
+    }, 0);
   }
 
   if (!result) return null;
