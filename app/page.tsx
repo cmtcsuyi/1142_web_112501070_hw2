@@ -1,3 +1,4 @@
+import Link from "next/link";
 export default function Home() {
   return (
     <>
@@ -24,12 +25,12 @@ export default function Home() {
       </p>
 
       <div className="flex justify-center">
-        <a
+        <Link
           href="/question"
           className="bg-[#2f3a36] text-white px-8 py-3 rounded-xl text-[14px] tracking-widest hover:scale-105 transition"
         >
           開始測驗
-        </a>
+        </Link>
       </div>
     </>
   );
