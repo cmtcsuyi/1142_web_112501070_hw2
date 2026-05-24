@@ -113,7 +113,7 @@ export default function Result() {
       {/* 按鈕 */}
       <button
         onClick={playAgain}
-        className="bg-[#2f3a36] text-white px-8 py-3 rounded-xl text-[14px] tracking-widest hover:scale-105 transition"
+        className="bg-[#2f3a36] text-white px-8 py-3 rounded-xl text-[14px] tracking-widest hover:scale-105 transition cursor-pointer"
       >
         再來一次
       </button>
